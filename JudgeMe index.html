@@ -1,0 +1,98 @@
+ <!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JudgeMe.ai</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #ffffff;
+      color: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }.container {
+  text-align: center;
+  max-width: 500px;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #555;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+button {
+  margin-top: 15px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #111;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #333;
+}
+
+.result {
+  margin-top: 25px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>JudgeMe.ai</h1>
+    <p>Enter your habits, playlist, or routine... and prepare to be judged.</p><textarea id="inputText" placeholder="e.g. I wake up late, listen to sad songs, and procrastinate..."></textarea>
+<br>
+<button onclick="judge()">Judge Me</button>
+
+<div class="result" id="result"></div>
+
+  </div>  <script>
+    const roasts = [
+      "You really typed that out and thought it was okay? Bold of you.",
+      "This isn't a routine. It's a cry for help with WiFi.",
+      "I've seen more discipline in a broken alarm clock.",
+      "Your habits have the personality of a loading screen.",
+      "If laziness were a sport, you'd still come second for not trying.",
+      "This explains... absolutely everything that's wrong.",
+      "You didn't need judgment. You needed intervention.",
+      "Honestly? This is why aliens won't visit us.",
+      "I've processed your input. Regret is my only output.",
+      "This is less 'routine' and more 'ongoing disaster'."
+    ];
+
+    function judge() {
+      const input = document.getElementById('inputText').value;
+      if (!input.trim()) {
+        document.getElementById('result').innerText = "At least give me something to judge.";
+        return;
+      }
+
+      const randomRoast = roasts[Math.floor(Math.random() * roasts.length)];
+      document.getElementById('result').innerText = randomRoast;
+    }
+  </script></body>
+</html>
